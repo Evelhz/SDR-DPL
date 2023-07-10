@@ -60,7 +60,7 @@ for iTrial = 1 : TrialNum
     [~,PredictLabel] = ClassificationSDRDPL( TtData , DictMat,P_Mat,Sal_Mat);
     TtTime = toc;
     
-    MAE = mae(abs(PredictLabel-TtLabel));
+    MAE = mean(abs(PredictLabel-TtLabel));
     MSE = (PredictLabel-TtLabel)*(PredictLabel-TtLabel)'/length(PredictLabel);
 
     MAE_DPL(iTrial) = MAE;
